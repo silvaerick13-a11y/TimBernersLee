@@ -1,14 +1,101 @@
-const curiosidades = [
-  "O primeiro servidor web do mundo rodava em um computador NeXT no CERN.",
-  "Tim Berners-Lee escreveu o primeiro navegador e servidor web sozinho.",
-  "O primeiro site da história ainda está online no endereço info.cern.ch.",
-  "Ele fundou o W3C (World Wide Web Consortium) em 1994 para definir os padrões da web."
-];
+// =========================================================
+// MENU MOBILE
+// =========================================================
 
-const btn = document.getElementById('btnCuriosidade');
-const texto = document.getElementById('curiosidadeText');
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
 
-btn.addEventListener('click', () => {
-  const indiceSorteado = Math.floor(Math.random() * curiosidades.length);
-  texto.textContent = curiosidades[indiceSorteado];
+menuButton.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    if (navLinks.classList.contains("active")) {
+        menuButton.textContent = "✕";
+    } else {
+        menuButton.textContent = "☰";
+    }
 });
+
+
+// Fecha o menu ao clicar em um link
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+        menuButton.textContent = "☰";
+
+    });
+
+});
+
+
+// =========================================================
+// ANIMAÇÃO AO ROLAR A PÁGINA
+// =========================================================
+
+const elementsToReveal = document.querySelectorAll(
+    ".section-heading, .intro-grid, .tech-card, .server-content, .timeline-item, .legacy-grid, .legacy-quote, .final-content"
+);
+
+elementsToReveal.forEach(element => {
+    element.classList.add("reveal");
+});
+
+
+const observer = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.12
+    }
+
+);
+
+
+elementsToReveal.forEach(element => {
+    observer.observe(element);
+});
+
+
+// =========================================================
+// ANO AUTOMÁTICO NO RODAPÉ
+// =========================================================
+
+const yearElement = document.getElementById("year");
+
+yearElement.textContent = new Date().getFullYear();
+
+
+// =========================================================
+// EFEITO SUAVE NO HEADER AO ROLAR
+// =========================================================
+
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+
+        header.style.background =
+            "rgba(5, 8, 14, 0.96)";
+
+    } else {
+
+        header
