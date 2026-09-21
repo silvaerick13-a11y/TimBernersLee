@@ -1,101 +1,88 @@
-// =========================================================
-// MENU MOBILE
-// =========================================================
+```javascript
+// ==============================
+// TEMA CLARO / ESCURO
+// ==============================
 
-const menuButton = document.getElementById("menuButton");
-const navLinks = document.getElementById("navLinks");
+const themeButton = document.getElementById("themeButton");
 
-menuButton.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+themeButton.addEventListener("click", () => {
 
-    if (navLinks.classList.contains("active")) {
-        menuButton.textContent = "✕";
+    document.body.classList.toggle("light");
+
+    if (document.body.classList.contains("light")) {
+        themeButton.textContent = "☀️";
     } else {
-        menuButton.textContent = "☰";
+        themeButton.textContent = "🌙";
     }
-});
-
-
-// Fecha o menu ao clicar em um link
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navLinks.classList.remove("active");
-
-        menuButton.textContent = "☰";
-
-    });
 
 });
 
 
-// =========================================================
-// ANIMAÇÃO AO ROLAR A PÁGINA
-// =========================================================
+// ==============================
+// ANIMAÇÃO AO APARECER
+// ==============================
 
-const elementsToReveal = document.querySelectorAll(
-    ".section-heading, .intro-grid, .tech-card, .server-content, .timeline-item, .legacy-grid, .legacy-quote, .final-content"
+const elements = document.querySelectorAll(
+    ".timeline-item, .card, .stat, .intro-text"
 );
 
-elementsToReveal.forEach(element => {
-    element.classList.add("reveal");
-});
-
-
 const observer = new IntersectionObserver(
-
     (entries) => {
 
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
 
             if (entry.isIntersecting) {
 
-                entry.target.classList.add("visible");
-
-                observer.unobserve(entry.target);
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
 
             }
 
         });
 
     },
-
     {
-        threshold: 0.12
+        threshold: 0.15
     }
-
 );
 
 
-elementsToReveal.forEach(element => {
+elements.forEach((element) => {
+
+    element.style.opacity = "0";
+    element.style.transform = "translateY(30px)";
+    element.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+
     observer.observe(element);
+
 });
 
 
-// =========================================================
-// ANO AUTOMÁTICO NO RODAPÉ
-// =========================================================
+// ==============================
+// EFEITO DE DIGITAÇÃO NO HERO
+// ==============================
 
-const yearElement = document.getElementById("year");
+const tag = document.querySelector(".tag");
 
-yearElement.textContent = new Date().getFullYear();
+const originalText = tag.textContent;
 
+tag.textContent = "";
 
-// =========================================================
-// EFEITO SUAVE NO HEADER AO ROLAR
-// =========================================================
+let index = 0;
 
-const header = document.querySelector(".header");
+function typeWriter() {
 
-window.addEventListener("scroll", () => {
+    if (index < originalText.length) {
 
-    if (window.scrollY > 50) {
+        tag.textContent += originalText.charAt(index);
 
-        header.style.background =
-            "rgba(5, 8, 14, 0.96)";
+        index++;
 
-    } else {
+        setTimeout(typeWriter, 45);
 
-        header
+    }
+
+}
+
+typeWriter();
+```
