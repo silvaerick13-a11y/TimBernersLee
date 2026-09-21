@@ -1,51 +1,302 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tim Berners-Lee | O Criador da Web</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navegação -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">&lt;WEB/&gt;</div>
+
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#vida">Vida</a></li>
+                <li><a href="#web">A Web</a></li>
+                <li><a href="#legado">Legado</a></li>
+            </ul>
+
+            <button id="themeButton" aria-label="Alternar tema">
+                🌙
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+
+        <div class="hero-content">
+            <p class="tag">&lt;WORLD_WIDE_WEB /&gt;</p>
+
+            <h1>
+                Tim<br>
+                <span>Berners-Lee</span>
+            </h1>
+
+            <p class="hero-text">
+                O cientista britânico que criou a World Wide Web
+                e transformou a maneira como o mundo compartilha
+                informações.
+            </p>
+
+            <a href="#vida" class="button">
+                Conheça sua história ↓
+            </a>
+        </div>
+
+        <div class="hero-image">
+            <div class="image-frame">
+                <img
+                    src="https://cds.cern.ch/images/CERN-GE-9407011-31/file"
+                    alt="Tim Berners-Lee, inventor da World Wide Web"
+                >
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Introdução -->
+    <section class="intro">
+        <div class="container">
+
+            <p class="section-label">01 — QUEM FOI?</p>
+
+            <h2>
+                O homem por trás
+                <span>da Web</span>
+            </h2>
+
+            <p class="intro-text">
+                Tim Berners-Lee é um cientista da computação britânico,
+                nascido em Londres em 1955. Ele ficou conhecido mundialmente
+                por inventar a World Wide Web enquanto trabalhava no CERN,
+                em 1989.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- Vida -->
+    <section id="vida" class="section">
+
+        <div class="container">
+
+            <p class="section-label">02 — SUA VIDA</p>
+
+            <h2>Uma trajetória de inovação</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="year">1955</div>
+
+                    <div class="timeline-content">
+                        <h3>Nasce em Londres</h3>
+
+                        <p>
+                            Timothy John Berners-Lee nasceu em
+                            8 de junho de 1955, em Londres, Inglaterra.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="year">1976</div>
+
+                    <div class="timeline-content">
+                        <h3>Universidade de Oxford</h3>
+
+                        <p>
+                            Berners-Lee concluiu seus estudos na
+                            Queen's College, Universidade de Oxford.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="year">1980</div>
+
+                    <div class="timeline-content">
+                        <h3>O projeto ENQUIRE</h3>
+
+                        <p>
+                            Durante seu trabalho no CERN, desenvolveu
+                            o ENQUIRE, um sistema de hipertexto que
+                            antecipava algumas ideias fundamentais
+                            da futura Web.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="timeline-item highlight">
+                    <div class="year">1989</div>
+
+                    <div class="timeline-content">
+                        <h3>Nasce a World Wide Web</h3>
+
+                        <p>
+                            Enquanto trabalhava no CERN, Berners-Lee
+                            apresentou uma proposta para criar um sistema
+                            global de informação baseado em hipertexto.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="year">1990</div>
+
+                    <div class="timeline-content">
+                        <h3>Primeiro navegador e servidor</h3>
+
+                        <p>
+                            Ele desenvolveu o primeiro navegador e editor
+                            da Web, chamado WorldWideWeb, além do primeiro
+                            servidor web.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="timeline-item">
+                    <div class="year">1994</div>
+
+                    <div class="timeline-content">
+                        <h3>Criação do W3C</h3>
+
+                        <p>
+                            Berners-Lee fundou o World Wide Web Consortium,
+                            organização dedicada ao desenvolvimento de
+                            padrões para a Web.
+                        </p>
+                    </div>
+                </div>
+
             </div>
 
-        </section>
+        </div>
+    </section>
 
-    </main>
+
+    <!-- Tecnologias -->
+    <section id="web" class="web-section">
+
+        <div class="container">
+
+            <p class="section-label">03 — A GRANDE CRIAÇÃO</p>
+
+            <h2>
+                As peças que
+                <span>formaram a Web</span>
+            </h2>
+
+            <div class="cards">
+
+                <article class="card">
+                    <div class="card-number">01</div>
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        A linguagem utilizada para estruturar
+                        documentos e páginas na Web.
+                    </p>
+                </article>
 
 
-    <!-- ================= FOOTER ================= -->
+                <article class="card">
+                    <div class="card-number">02</div>
 
-    <footer class="footer">
+                    <h3>HTTP</h3>
 
-        <div class="footer-logo">
-            &lt;/&gt; WEB.
+                    <p>
+                        Um dos principais protocolos utilizados
+                        para a comunicação entre navegadores
+                        e servidores Web.
+                    </p>
+                </article>
+
+
+                <article class="card">
+                    <div class="card-number">03</div>
+
+                    <h3>URL</h3>
+
+                    <p>
+                        O sistema de endereços que permite
+                        identificar e localizar recursos na Web.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Curiosidade -->
+    <section class="quote-section">
+
+        <div class="quote">
+            <span class="quote-mark">“</span>
+
+            <p>
+                A Web foi criada para ser uma ferramenta
+                aberta e acessível para compartilhar informações.
+            </p>
+
+            <span class="quote-author">
+                — Tim Berners-Lee
+            </span>
         </div>
 
-        <p>
-            Página educativa sobre Tim Berners-Lee e a história
-            da World Wide Web.
-        </p>
-
-        <div class="footer-links">
-
-            <a
-                href="https://home.cern/science/computing/birth-web"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                CERN
-            </a>
-
-            <a
-                href="https://www.w3.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                W3C
-            </a>
-
-        </div>
-
-        <p class="copyright">
-            © <span id="year"></span> — Projeto educacional
-        </p>
-
-    </footer>
+    </section>
 
 
-    <script src="script.js"></script>
+    <!-- Legado -->
+    <section id="legado" class="section legacy">
 
-</body>
-</html>
+        <div class="container">
+
+            <p class="section-label">04 — LEGADO</p>
+
+            <h2>Uma invenção que mudou o mundo</h2>
+
+            <div class="legacy-grid">
+
+                <div>
+                    <p>
+                        A invenção da World Wide Web mudou profundamente
+                        a comunicação, a educação, a ciência, o comércio
+                        e o acesso à informação.
+                    </p>
+
+                    <p>
+                        Em 1993, o CERN colocou o software da Web em
+                        domínio público, uma decisão que ajudou a permitir
+                        sua ampla disseminação.
+                    </p>
+                </div>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <strong>1989</strong>
+                        <span>Criação da proposta da Web</span>
+                    </div>
+
+                    <div class="stat">
+```
